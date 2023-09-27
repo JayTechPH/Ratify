@@ -57,7 +57,7 @@ Options:
     -select         Select streaming option (1 for audio, 2 for screen share, 3 for camera).
 
 Options for CMD:
-    --------
+--------
     warning                             Show a warning message.
     logger                              Start a keylogger to record keystrokes. if want to run in background "logger false"
     copy                                Upload files to a specified server. required file select example "upload id.txt"
