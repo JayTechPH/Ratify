@@ -22,7 +22,7 @@ To install and run the provided code, follow the steps below:
 
 2. Navigate to the project directory:
    ```bash
-   $ cd project
+   $ cd Ratify
    ```
 
 3. Install the required dependencies. Make sure you have `pyautogui` and `customtkinter` installed:
