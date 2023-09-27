@@ -38,7 +38,7 @@ To install and run the provided code, follow the steps below:
 
 Make sure you have the necessary permissions and requirements to run the code successfully.
 
-##Usage:
+Usage:
 ------
     python ratify.py [options]
 
