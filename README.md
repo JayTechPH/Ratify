@@ -6,7 +6,7 @@
 </p>   
 
 <p align=center>  
-<a href=https://github.com/JayTechPH<img src="https://img.shields.io/badge/Author-JayTechPH-red.svg?style=for-the-badge&label=Author" /></a>
+<a href="https://github.com/JayTechPH"<img src="https://img.shields.io/badge/Author-JayTechPH-red.svg?style=for-the-badge&label=Author" /></a>
 
 <img src="https://img.shields.io/badge/Version-1.0-brightgreen?style=for-the-badge" >
 <img src="https://img.shields.io/github/stars/JayTechPH/Ratify?style=for-the-badge">  
