@@ -63,10 +63,10 @@ Options:
     -stream         Start audio or video streaming.
     -filepath       Path to the file to be uploaded (required for -upload).
     -uploadlink     Custom upload link for file uploads (required for -upload).
-    -ip             Server IP address for remote control (default: 147.185.221.16).
-    -port           Server port for remote control (default: 42700).
-    -ips            Secondary server IP address for streaming (default: 147.185.221.16).
-    -ps             Secondary server port for streaming (default: 2493).
+    -ip             Server IP address for remote control.
+    -port           Server port for remote control.
+    -ips            Secondary server IP address for streaming
+    -ps             Secondary server port for streaming.
     -select         Select streaming option (1 for audio, 2 for screen share, 3 for camera).
 
 Options for CMD:
